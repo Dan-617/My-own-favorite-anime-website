@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimetsu No Yaiba</title>
+
+  <style>
+    /* colors */
+    :root {
+      --bg: #0b0f14;
+      --text: #e6eef3;
+      --muted: #9aa6b0;
+      --c1: #f36868;
+      --c2: #feca57;
+      --c3: #1dd1a1;
+    }
+
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      padding: 80px 20px;
+    }
+
+    /* name badge */
+    .name {
+      position: fixed;
+      top: 18px;
+      left: 22px;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 14px;
+      border: 2px solid var(--c1);
+      border-radius: 6px;
+      background: rgba(0,0,0,0.3);
+      box-shadow: 0 0 12px rgba(243,104,104,0.4);
+      z-index: 1000;
+    }
+
+    /* section title */
+    h1 {
+      text-align: center;
+      margin-bottom: 60px;
+      font-size: 28px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      background: #fff;
+    }
+
+    hr {
+      border: 0;
+      height: 2px;
+      background: #ffffff30;
+      width: 80%;
+      max-width: 800px;
+      margin: 80px auto;
+    }
+
+    /* grid */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    /* card */
+    .card {
+      position: relative;
+      height: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.65);
+    }
+
+    /* media */
+    .card video,
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55);
+    }
+
+    /* wide gif fix */
+    .wide {
+      transform: scale(1.2);
+      object-position: center;
+    }
+
+    /* info overlay */
+    .info {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      transform: translateY(55%);
+      transition: transform 0.45s ease;
+    }
+
+    .card:hover .info {
+      transform: translateY(0);
+    }
+
+    .info h2 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .info p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* colors */
+    .c1 { border-color: var(--c1); }
+    .c2 { border-color: var(--c2); }
+    .c3 { border-color: var(--c3); }
+
+    .c1 h2 { color: var(--c1); }
+    .c2 h2 { color: var(--c2); }
+    .c3 h2 { color: var(--c3); }
+
+    /* mobile */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- name -->
+<div class="name">Dan Carlo Jontilano</div>
+
+<!-- main 3 -->
+<h1>THE MAIN 3</h1>
+<div class="container">
+  <div class="card c1">
+    <video src="The Main 3/Tanjiro.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Tanjiro Kamado</h2>
+      <p>A kind-hearted demon slayer driven by love for his sister. Uses Water Breathing and the rare Sun Breathing technique.</p>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <video src="The Main 3/Zenitsu.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Zenitsu Agatsuma</h2>
+      <p>Fearful and anxious, but becomes unstoppable when unconscious. Masters Thunder Breathing with incredible speed.</p>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <video src="The Main 3/Inosuke.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Inosuke Hashibira</h2>
+      <p>Raised in the mountains, fights with instinct and aggression. Uses Beast Breathing and dual swords.</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- hashira -->
+<h1>THE 9 HASHIRA</h1>
+<div class="container">
+  <div class="card c1">
+    <video src="The 9 Hashira/Gyomei.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Gyomei Himejima</h2>
+      <p>The Stone Hashira, known for unmatched strength and compassion. Uses powerful stone-based breathing.</p>
+    </div>
+  </div>
+
+  <div class="card c1">
+    <video src="The 9 Hashira/Rengoku.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Kyojuro Rengoku</h2>
+      <p>Flame Hashira with fiery passion and unwavering spirit. Fights to protect others and uphold justice.</p>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <video src="The 9 Hashira/Sanemi.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Sanemi Shinazugawa</h2>
+      <p>A brutal and stubborn Wind Hashira who hides his kindness behind anger. Fierce in battle with strong instincts.</p>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <video src="The 9 Hashira/Giyu.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Giyu Tomioka</h2>
+      <p>Quiet and serious Water Hashira. Calm in battle and highly skilled in precision and defense.</p>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <video src="The 9 Hashira/Tengen.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Tengen Uzui</h2>
+      <p>The flashy Sound Hashira who loves extravagance. Uses sound-based attacks and explosive speed.</p>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <video src="The 9 Hashira/Mitsuri.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Mitsuri Kanroji</h2>
+      <p>The Love Hashira known for her warmth and strength. Uses flexible sword techniques and superhuman speed.</p>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <video src="The 9 Hashira/Muichiro.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Muichiro Tokito</h2>
+      <p>The Mist Hashira who is calm and distant. A prodigy with incredible reflexes and mist-based attacks.</p>
+    </div>
+  </div>
+
+  <div class="card c1">
+    <video src="The 9 Hashira/Obanai.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Obanai Iguro</h2>
+      <p>The Snake Hashira, strict and disciplined. Uses precise slithering sword movements and deadly techniques.</p>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <video src="The 9 Hashira/Shinobu.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Shinobu Kocho</h2>
+      <p>The Insect Hashira who fights with speed and poison. Uses medical knowledge and lethal stings.</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- upper moons -->
+<h1>THE UPPER MOONS</h1>
+<div class="container">
+  <div class="card c1">
+    <video src="The Upper Moon Demon's/Kokushibo.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Upper Moon One – Kokushibo</h2>
+      <p>Former demon slayer turned strongest Upper Moon. Uses Moon Breathing and overwhelming sword power.</p>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <video src="The Upper Moon Demon's/Doma.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Upper Moon Two – Doma</h2>
+      <p>Cold and charismatic demon who uses ice and freezing techniques. Views humans as weak and meaningless.</p>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <video src="The Upper Moon Demon's/Akaza.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Upper Moon Three – Akaza</h2>
+      <p>A brutal fighter obsessed with strength. Uses Destructive Death martial arts and fierce speed.</p>
+    </div>
+  </div>
+
+  <div class="card c1">
+    <img src="The Upper Moon Demon's/Hantengu.gif" class="wide">
+    <div class="info">
+      <h2>Upper Moon Four – Hantengu</h2>
+      <p>Divides into multiple demons based on emotions. Each form has unique abilities and strength.</p>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <video src="The Upper Moon Demon's/Gyokko.mp4" autoplay muted loop></video>
+    <div class="info">
+      <h2>Upper Moon Five – Gyokko</h2>
+      <p>A demon artist who uses water pottery and monsters. Known for his twisted creativity and cruelty.</p>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <img src="The Upper Moon Demon's/Gyutaro and Daki.jpg">
+    <div class="info">
+      <h2>Upper Moon Six – Gyutaro & Daki</h2>
+      <p>Siblings who share the Upper Moon rank. Fight together with deadly teamwork and blood demon arts.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
